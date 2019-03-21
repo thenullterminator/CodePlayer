@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Controlgroup - Toolbar</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+    #zoom-button {
+      width: 55px;
+    }
+    #fontname-button,
+    #fontsize-button {
+      width: 45px;
+    }
+    #forecolor-button {
+      width: 50px;
+    }
+    #hilitecolor-button {
+      width: 70px;
+    }
+    #bold {
+      font-weight: bold;
+    }
+    #italic {
+      font-style: italic;
+    }
+    #underline {
+      text-decoration: underline;
+    }
+    .toolbar {
+      font-size: .75em;
+    }
+    #page {
+      width: 440px;
+      left: 50%;
+      position: relative;
+      margin-left: -226px;
+      height: 450px;
+      border: 1px solid #888;
+      box-shadow: 7px 7px 3px #ccc;
+      font-size: 11px;
+      font-family: "Lucida Grande";
+      zoom: 100%;
+      padding: 5px;
+      white-space: pre-line;
+      overflow: scroll;
+    }
+    .wrap {
+      width: 588px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    
+    $( "#print" ).button({
+      "icon": "ui-icon-print",
+      "showLabel": false
+    });
+    $( "#redo" ).button({
+      "icon": "ui-icon-arrowreturnthick-1-e",
+      "showLabel": false
+    });
+    $( "#undo" ).button({
+      "icon": "ui-icon-arrowreturnthick-1-w",
+      "showLabel": false
+    });
+ 
+    $( ".toolbar" ).controlgroup();
+  
+  } );
+  </script>
+</head>
+<body>
+<div class="wrap">
+  <div class="toolbar">
+      <button id="print">Print</button>
+      <button id="undo">Undo</button>
+      <button id="redo">Redo</button>
+
+      <button id="bold">B</button>
+      <button id="italic">I</button>
+      <button id="underline">U</button>
+ 
+  </div>
+  
+  
+</div>
+ 
+</body>
+</html>
