@@ -131,11 +131,13 @@ PROJECT | CODEPLAYER
 
 
 <script type="text/javascript">
+
 $("textarea").width("49.5%");
 $("iframe").width("49.9%");
 $("textarea").height($(window).height()-$("#navbar").height()-19.2);
 $("iframe").height($(window).height()-$("#navbar").height()-19.2);
 
+// $("textarea").resizable({axis:"x"});
 
 
 
@@ -151,18 +153,26 @@ $(".button").click(function()
     var each=100/num;
     $("textarea").width(each+"%");
     $("iframe").width(each-0.6+"%");
-});
+}); // document.getElementById("outputarea").contentWindow.eval($("#jsarea").val());
 
 
 
-
-// For taking code input.....................
+// For taking html/css code input.....................
 $(function () {
     $("#htmlarea").on("change keyup paste", function () {
-        $("#outputarea").contents().find("html").html($("#htmlarea").val());
+        $("iframe").contents().find("body").html($("#htmlarea").val());
     });
+ 
+    $("#cssarea").on("change keyup paste", function () {
+        $("iframe").contents().find("head").append("<style></style>").children('style').text($("#cssarea").val());
+    });
+
+    $("#jsarea").on("change keyup paste", function () {
+        document.getElementById("outputarea").contentWindow.eval($("#jsarea").val());
+    });
+
 });
-// For taking code input.....................
+// For taking html/css code input.....................
 
 
 
